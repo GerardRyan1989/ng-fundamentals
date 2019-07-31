@@ -21,6 +21,7 @@ import { EventService } from './shared/event.service';
 export class EventsListComponent implements OnInit {
   events: any[];
 
+  // tslint:disable-next-line:max-line-length
   constructor(@Inject(forwardRef(() => EventService))private eventService: EventService, @Inject(forwardRef(() => ToastrService))private toastr: ToastrService) {
 
   }

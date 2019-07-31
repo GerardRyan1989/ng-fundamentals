@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import {Component, forwardRef, Inject, OnInit} from '@angular/core';
 import { EventService} from '../shared/event.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { EventService} from '../shared/event.service';
 
 export class EventDetailsComponent {
   event: any;
-  constructor(private eventService: EventService) {
+  constructor(@Inject(forwardRef(() => EventService))private eventService: EventService) {
 
   }
 
