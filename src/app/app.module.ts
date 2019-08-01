@@ -25,7 +25,7 @@ import {EventsListResolverService} from './events-list-resolver.service';
     NavBarComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
   ],
   providers: [
     EventService,
