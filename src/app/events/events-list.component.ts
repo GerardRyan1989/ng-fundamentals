@@ -2,6 +2,7 @@ import {Component, forwardRef, Inject, Injectable, Input, OnInit} from '@angular
 import { ToastrService } from '../common/toastr.service';
 import { EventService } from './shared/event.service';
 import { ActivatedRoute} from '@angular/router';
+import { IEvent} from './shared';
 
 @Component({
   template: `
@@ -19,7 +20,7 @@ import { ActivatedRoute} from '@angular/router';
 
 @Input()
 export class EventsListComponent implements OnInit {
-  events: any[];
+  events: IEvent[];
 
   // tslint:disable-next-line:max-line-length
   constructor(@Inject(forwardRef(() => EventService))private eventService: EventService,

@@ -2,6 +2,7 @@
 import {Component, forwardRef, Inject, OnInit} from '@angular/core';
 import { EventService } from '../shared/event.service';
 import { ActivatedRoute} from '@angular/router';
+import {IEvent} from '../shared';
 
 @Component({
   templateUrl: './event-details.component.html',
@@ -12,7 +13,7 @@ import { ActivatedRoute} from '@angular/router';
 })
 
 export class EventDetailsComponent {
-  event: any;
+  event: IEvent;
   // tslint:disable-next-line:max-line-length
   constructor(@Inject(forwardRef(() => EventService))private eventService: EventService, @Inject(forwardRef(() => ActivatedRoute)) private route: ActivatedRoute) {
 
