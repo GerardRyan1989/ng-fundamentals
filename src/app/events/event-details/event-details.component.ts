@@ -13,6 +13,7 @@ import { ActivatedRoute} from '@angular/router';
 
 export class EventDetailsComponent {
   event: any;
+  // tslint:disable-next-line:max-line-length
   constructor(@Inject(forwardRef(() => EventService))private eventService: EventService, @Inject(forwardRef(() => ActivatedRoute)) private route: ActivatedRoute) {
 
   }
