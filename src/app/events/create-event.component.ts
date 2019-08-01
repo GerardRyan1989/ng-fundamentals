@@ -18,7 +18,7 @@ import {Router} from '@angular/router';
 
 export class CreateEventComponent {
 
-
+  isDirty = true;
   constructor(@Inject(forwardRef(() => Router))private router: Router) {
 
   }
