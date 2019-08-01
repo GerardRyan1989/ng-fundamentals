@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import {Component, Injectable} from '@angular/core';
 
 @Component({
   template: `
@@ -13,6 +13,7 @@ import { Component } from '@angular/core'
     </div>
   `,
 })
+@Injectable()
 export class ProfileComponent {
 
 }

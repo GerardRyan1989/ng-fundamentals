@@ -10,23 +10,25 @@ import {
   CreateEventComponent,
   EventRouteActivatorService,
   EventsListResolverService
-} from './events/index';
-import {  EventsAppComponent } from './events-app.component';
+} from './events';
+import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { ToastrService } from './common/toastr.service';
 import { appRoutes } from './routes';
-import {Error404Component} from './errors/404.components';
+import { Error404Component } from './errors/404.components';
+import { AuthService } from './user/auth.service';
 
 
 @NgModule({
-  imports: [BrowserModule,
-  RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)],
   declarations: [
     EventsAppComponent,
     EventsListComponent,
     EventThumbnailComponent,
-    NavBarComponent,
     EventDetailsComponent,
+    NavBarComponent,
     CreateEventComponent,
     Error404Component,
   ],
@@ -35,11 +37,12 @@ import {Error404Component} from './errors/404.components';
     ToastrService,
     EventRouteActivatorService,
     EventsListResolverService,
+    AuthService,
     {
       provide: 'canDeactivateCreateEvent',
-      useValue: checkDirtyState }
-
-    ],
+      useValue: checkDirtyState
+    }
+  ],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
