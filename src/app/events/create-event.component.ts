@@ -22,7 +22,7 @@ export class CreateEventComponent {
   }
 
   saveEvent(formValues) {
-    this.eventService.saveEvent(formValues);
+    EventService.saveEvent(formValues);
     this.isDirty = false;
     this.router.navigate(['/events']);
   }

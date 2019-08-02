@@ -16,12 +16,16 @@ export class EventService {
     return EVENTS.find(event => event.id === id);
   }
 
-  saveEvent(event) {
+  static saveEvent(event) {
         event.id = 999;
         event.session = [];
         EVENTS.push(event);
   }
 
+  updateEvent(event) {
+    const index = EVENTS.findIndex((x => x.id = event.id));
+    EVENTS[index] = event;
+  }
 
 }
 
