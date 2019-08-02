@@ -1,5 +1,5 @@
 import {Component, forwardRef, Inject} from '@angular/core';
-import { EventService } from './shared/event.service';
+import { EventService } from './shared';
 import {Router} from '@angular/router';
 @Component({
   templateUrl: `create-event.component.html`,
@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
 })
 
 export class CreateEventComponent {
-  newEvent;
+
   isDirty = true;
   constructor(@Inject(forwardRef(() => Router))private router: Router,
               @Inject(forwardRef(() => EventService))private eventService: EventService) {
