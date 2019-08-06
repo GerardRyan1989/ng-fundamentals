@@ -17,6 +17,7 @@ export class EventDetailsComponent {
   event: IEvent;
   addMode: boolean;
   filterBy = 'all';
+  sortBy = 'votes';
   // tslint:disable-next-line:max-line-length
   constructor(@Inject(forwardRef(() => EventService))private eventService: EventService, @Inject(forwardRef(() => ActivatedRoute)) private route: ActivatedRoute) {
 
