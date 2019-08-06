@@ -12,7 +12,8 @@ import {
   EventsListResolverService,
   CreateSessionComponent,
   SessionListComponent,
-  DurationPipe
+  DurationPipe,
+  UpvoteComponent, VoterService
 
 } from './events';
 
@@ -57,6 +58,7 @@ const  jQuery = ( window as any).$;
     CollapsibleWellComponent,
     DurationPipe,
     AppSimpleModalComponent,
+    UpvoteComponent,
     ModalTriggerDirective
   ],
   providers: [
@@ -72,6 +74,7 @@ const  jQuery = ( window as any).$;
     EventRouteActivatorService,
     EventsListResolverService,
     AuthService,
+    VoterService,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState

@@ -1,4 +1,3 @@
-
 import {Component, forwardRef, Inject, OnInit} from '@angular/core';
 import { EventService } from '../shared';
 import { ActivatedRoute} from '@angular/router';
