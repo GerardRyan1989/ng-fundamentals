@@ -1,5 +1,7 @@
 import {Component, forwardRef, Inject} from '@angular/core';
 import { AuthService} from '../user/auth.service';
+import {EventService, ISession} from '../events/shared';
+import {$} from 'protractor';
 
 
 @Component({
@@ -14,7 +16,17 @@ import { AuthService} from '../user/auth.service';
 })
 
 export class NavBarComponent {
-  constructor(@Inject(forwardRef(() => AuthService)) public auth: AuthService) {
+  searchTerm =  '';
+  foundSessions: ISession[];
 
+  constructor(@Inject(forwardRef(() => AuthService)) public auth: AuthService,
+              @Inject(forwardRef(() => EventService)) private eventService: EventService ) {
+  }
+
+  searchSessions(searchTerm) {
+      this.eventService.searchSessions(searchTerm).subscribe(
+        sessions => {
+          this.foundSessions = sessions;
+        });
   }
 }
