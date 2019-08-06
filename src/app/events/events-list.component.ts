@@ -1,5 +1,4 @@
 import {Component, forwardRef, Inject, Injectable, Input, OnInit} from '@angular/core';
-import { ToastrService } from '../common/toastr.service';
 import { EventService } from './shared/event.service';
 import { ActivatedRoute} from '@angular/router';
 import { IEvent} from './shared';
@@ -11,7 +10,7 @@ import { IEvent} from './shared';
           <hr>
           <div class="row">
               <div *ngFor="let event of events" class="col-md-5">
-                  <app-event-thumbnail (click)="handleThumbnailClick(event.name)" [event]="event"></app-event-thumbnail>
+                  <app-event-thumbnail [event]="event"></app-event-thumbnail>
               </div>
           </div>
       </div>
@@ -24,7 +23,6 @@ export class EventsListComponent implements OnInit {
 
   // tslint:disable-next-line:max-line-length
   constructor(@Inject(forwardRef(() => EventService))private eventService: EventService,
-              @Inject(forwardRef(() => ToastrService))private toastr: ToastrService,
               @Inject(forwardRef(() => ActivatedRoute))private route: ActivatedRoute) {
 
   }
@@ -34,8 +32,5 @@ export class EventsListComponent implements OnInit {
     this.events = this.route.snapshot.data['events'];
   }
 
-  handleThumbnailClick(eventName) {
-      console.log('Click Successful');
-      this.toastr.success(eventName);
-  }
+
 }
