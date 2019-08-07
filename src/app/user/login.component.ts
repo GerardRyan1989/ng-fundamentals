@@ -13,6 +13,7 @@ export class LoginComponent {
   userName: string;
   password: string;
   mouseoverLogin: boolean;
+  loginInvalid = false;
 
   constructor(@Inject(forwardRef(() => AuthService)) private authService: AuthService,
               @Inject(forwardRef(() => Router)) private router: Router) {
@@ -20,8 +21,13 @@ export class LoginComponent {
   }
 
   login(formValues) {
-    this.authService.loginUser(formValues.userName, formValues.password);
-    this.router.navigate(['events']);
+    this.authService.loginUser(formValues.userName, formValues.password).subscribe(resp => {
+      if (!resp) {
+          this.loginInvalid = true;
+      } else {
+        this.router.navigate(['events']);
+      }
+    });
   }
 
   cancel() {
