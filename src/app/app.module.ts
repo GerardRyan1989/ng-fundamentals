@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import {
   EventsListComponent,
   EventThumbnailComponent,
@@ -15,7 +16,9 @@ import {
   DurationPipe,
   UpvoteComponent,
   VoterService,
-  LocationValidatorDirective, EventsResolverService,
+  LocationValidatorDirective,
+  EventsResolverService,
+
 
 } from './events';
 
