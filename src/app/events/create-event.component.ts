@@ -13,11 +13,13 @@ import {Router} from '@angular/router';
   `]
 })
 
+
+
 export class CreateEventComponent {
 
   isDirty = true;
-  constructor(@Inject(forwardRef(() => Router))private router: Router,
-              @Inject(forwardRef(() => EventService))private eventService: EventService) {
+  constructor(@Inject(forwardRef(() => Router)) private router: Router,
+              @Inject(forwardRef(() => EventService)) private eventService: EventService) {
 
   }
 

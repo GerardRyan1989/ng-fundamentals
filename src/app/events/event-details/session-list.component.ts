@@ -18,7 +18,7 @@ export class SessionListComponent implements OnChanges {
   @Input() eventId: number;
   visibleSessions: ISession[] = [];
 
-  constructor(@Inject(forwardRef(() => AuthService)) private auth: AuthService,
+  constructor(@Inject(forwardRef(() => AuthService)) public auth: AuthService,
               @Inject(forwardRef(() => VoterService)) private voterService: VoterService ) {
 }
 
