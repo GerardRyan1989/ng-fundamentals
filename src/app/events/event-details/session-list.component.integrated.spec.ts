@@ -63,7 +63,9 @@ describe('SessionListComponent', () => {
       fixture.detectChanges();
 
 
+      // both expects below, access and test the same value
       expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
+      expect(debugEL.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1');
 
     });
   });
