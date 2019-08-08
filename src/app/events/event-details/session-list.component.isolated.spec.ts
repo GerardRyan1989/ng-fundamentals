@@ -2,6 +2,7 @@ import { SessionListComponent} from './session-list.component';
 import { ISession} from '../shared';
 
 describe('SessionListComponent', () => {
+  // tslint:disable-next-line:one-variable-per-declaration
   let component: SessionListComponent,
     // tslint:disable-next-line:prefer-const
   mockAuthservice,
